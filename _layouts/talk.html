@@ -3,12 +3,12 @@
   <head>
     <meta charset='utf-8'>
     <title>{{ page.title }}</title>
+
+    <!-- S6 style sheet links -->
+    <link rel="stylesheet" href="assets/css/screen.css">
   </head>
   <body>
 
-    <p>Hello from Talk!</p>
-        
-    
     <article id='presentation'>
       {% include slides.html content = content
                              title   = page.title
@@ -17,5 +17,16 @@
        %}
     </article>
 
+  <!-- S6 JS -->
+  <script src="assets/js/slides.keys.js"></script>
+  <script src="assets/js/slides.progress.js"></script>
+  <script src="assets/js/slides.classes.js"></script>
+  <script src="assets/js/slides.state.js"></script>
+  <script src="assets/js/slides.kernel.js"></script>
+  <script>
+     const {Deck, classes, keys, progress, state} = S6;
+     const deck = new Deck({ parent: "#presentation",
+                             plugins: [classes(), keys(), progress(), state()] });
+  </script>
   </body>
 </html>
