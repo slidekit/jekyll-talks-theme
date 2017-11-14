@@ -6,7 +6,16 @@
   </head>
   <body>
 
-     Hello from Talk!
-   
+    <p>Hello from Talk!</p>
+        
+    
+    <article id='presentation'>
+      {% include slides.html content = content
+                             title   = page.title
+                             author  = page.author
+                             date    = page.date
+       %}
+    </article>
+
   </body>
 </html>
